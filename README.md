@@ -1,6 +1,6 @@
 # Project Getting and Cleaning Data
 ### The analytical script starts below this line
-###**************************ANALYTICAL SCRIPT**********************************###
+###******************ANALYTICAL SCRIPT***********************###
 ### The code written above the separating line downloads the raw data from the web and unzips the same into working directory.
 ### The packages "tidyr" and "dplyr" are loaded into RStudio.
 ### The files in the directory "./UCI HAR Dataset" are listed to know which files we need.
