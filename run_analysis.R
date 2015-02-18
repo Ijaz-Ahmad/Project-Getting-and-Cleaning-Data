@@ -54,12 +54,12 @@ test_train$activity <- replace(test_train$activity, test_train$activity==4, "sit
 test_train$activity <- replace(test_train$activity, test_train$activity==5, "standing")
 test_train$activity <- replace(test_train$activity, test_train$activity==6, "laying")
 
-## find mean and standard values in "features" table
+## find "mean" and "std" patterns in "features" table
 
 MeanFeature <- grep("mean()", features$V2)
 StdFeature <- grep("std()", features$V2)
 
-## select the mean and standard deviation column
+## select the columns containing "mean" and "standard deviation" values
 
 featuredData <- test_train %>%
         select(activity, V1:V6, V41:V46, V81:V86, V121:V126, V161:V166, V201:V202, V214:V215, V227:V228,
@@ -128,6 +128,6 @@ cnames <- c("activity", "tBodyAcc.mean.X", "tBodyAcc.mean.Y", "tBodyAcc.mean.Z",
             "fBodyBodyGyroJerkMag.mean", "fBodyBodyGyroJerkMag.std", "fBodyBodyGyroJerkMag.meanFreq")
 colnames(Avg_by_activity) <- cnames
 
-## convert the data.frame to a text file
+## convert the data.frame into a text file
 
 write.table(Avg_by_activity, "AverageByActivity.txt", row.name=FALSE)
